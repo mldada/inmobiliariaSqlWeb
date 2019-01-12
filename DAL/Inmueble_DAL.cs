@@ -37,8 +37,10 @@ namespace DAL
             try
             {
                 cn.Open();
-                cmd = new SqlCommand(buscarInmuebleId, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd = new SqlCommand(buscarInmuebleId, cn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
 
                 SqlParameter param_id_inmueble = new SqlParameter
                 {

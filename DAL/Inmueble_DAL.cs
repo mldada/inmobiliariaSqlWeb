@@ -58,7 +58,7 @@ namespace DAL
                 {
                     inmueble.Id_Inmueble = Convert.ToInt32(dr["id_inmueble"]);
                     inmueble.tipoPropiedad_E.Id_Tipo_Propiedad = Convert.ToInt32(dr["id_tipo_propiedad"]);
-                    inmueble.Es_Venta = Convert.ToBoolean(dr["es_venta"]);
+                    inmueble.Es_Venta = Convert.ToBoolean(Convert.ToInt32(dr["es_venta"]));
                     inmueble.Importe = Convert.ToInt32(dr["importe"]);
                     inmueble.Superficie = Convert.ToInt32(dr["superficie"]);
                     inmueble.Calle = dr["calle"].ToString();
@@ -69,7 +69,7 @@ namespace DAL
                     inmueble.Cant_Ambientes = Convert.ToInt32(dr["cant_ambientes"]);
                     inmueble.Piso = dr["piso"].ToString();
                     inmueble.Depto = dr["depto"].ToString();
-                    inmueble.Apto_Credito = Convert.ToBoolean(dr["apto_credito"]);
+                    inmueble.Apto_Credito = Convert.ToBoolean(Convert.ToInt32(dr["apto_credito"]));
 
                 }
             }

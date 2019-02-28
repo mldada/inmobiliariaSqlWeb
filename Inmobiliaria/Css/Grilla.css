@@ -1,0 +1,18 @@
+
+.encabezado{
+        background-color: gray ;
+        color: white;
+        text-align: center;
+}
+
+.datos{
+    width: 100px;
+}
+
+#tabla{
+    margin-left: 250px;
+    margin-top: 50px;
+    margin-bottom : 50px;
+    
+}
+

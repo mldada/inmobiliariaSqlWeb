@@ -75,11 +75,11 @@ namespace Inmobiliaria.Controllers
             cboLocalidades();
             return View();
         }
-        public ActionResult InsertarInmueble(int cboTipoPropiedad, bool esVenta, int importe, int superficie, string calle, int altura, int cboLocalidad, string descripcion, int estado, int cantAmbientes, string piso, string depto, bool? aptoCredito)
+        public ActionResult InsertarInmueble(int cboTipoPropiedad, bool es_venta, int importe, int superficie, string calle, int altura, int cboLocalidad, string descripcion, int estado, int cantAmbientes, string piso, string depto, bool aptoCredito)
         {
             Inmueble_E inmueble = new Inmueble_E();
             inmueble.tipoPropiedad_E.Id_Tipo_Propiedad = cboTipoPropiedad;
-            inmueble.Es_Venta = esVenta;                    
+            inmueble.Es_Venta = es_venta;                    
             inmueble.Importe = importe;
             inmueble.Superficie = superficie;
             inmueble.Calle = calle;
@@ -128,12 +128,12 @@ namespace Inmobiliaria.Controllers
             cboEstados();
             return View(inmueble_BL.BuscarInmuebleId(idInmueble));
         }
-        public ActionResult ActualizarInmueble(int idInmueble, int cboTipoPropiedad, bool? esVenta, int importe, int superficie, string calle, int altura, int cboLocalidad, string descripcion, int cboEstado, int cantAmbientes, string piso, string depto, bool? aptoCredito)
+        public ActionResult ActualizarInmueble(int idInmueble, int cboTipoPropiedad, bool? es_venta, int importe, int superficie, string calle, int altura, int cboLocalidad, string descripcion, int cboEstado, int cantAmbientes, string piso, string depto, bool? aptoCredito)
         {
             Inmueble_E inmueble = new Inmueble_E();
             inmueble.Id_Inmueble = idInmueble;
             inmueble.tipoPropiedad_E.Id_Tipo_Propiedad = cboTipoPropiedad;
-            inmueble.Es_Venta = Convert.ToBoolean(esVenta);
+            inmueble.Es_Venta = Convert.ToBoolean(es_venta);
             inmueble.Importe = importe;
             inmueble.Superficie = superficie;
             inmueble.Calle = calle;

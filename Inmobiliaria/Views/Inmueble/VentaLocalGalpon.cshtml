@@ -1,45 +1,64 @@
-﻿@model List<ENTIDAD.Inmueble_E>
+﻿<!doctype html>
+<html lang="en">
+<head>
+    @model List<ENTIDAD.Inmueble_E>
 
-@{
-    ViewBag.Title = "ListadoLocalGalponVenta";
-    Layout = "~/Views/Layout/_LayoutNavbar.cshtml";
-}
-
-<h2>Venta Local - Galpon</h2>
-
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>SUPERFICIE</th>
-        <th>AMBIENES</th>
-        <th>PISO</th>
-        <th>DEPTO</th>
-        <th>CALLE</th>
-        <th>ALTURA</th>
-        <th>DC_LOCALIDAD</th>
-        <th>DESCRIPCION</th>
-        <th>IMPORTE</th>
-        <th>CREDITO</th>
-        <th>DC_ESTADO</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-    <tr>
-        <td>@item.Id_Inmueble</td>
-        <td>@item.Superficie</td>
-        <td>@item.Cant_Ambientes</td>
-        <td>@item.Piso</td>
-        <td>@item.Depto</td>
-        <td>@item.Calle</td>
-        <td>@item.Altura</td>
-        <td>@item.localidad_E.Dc_Localidad</td>
-        <td>@item.Descripcion</td>
-        <td>@item.Importe</td>
-        <td>@item.Apto_Credito</td>
-        <td>@item.estado_E.Dc_Estado</td>
-        <td>@Html.ActionLink("ACTUALIZAR", "EditarVenta", new { idInmueble = item.Id_Inmueble })</td>
-        <td>@Html.ActionLink("ELIMINAR", "EliminarInmueble", new { idInmueble = item.Id_Inmueble })</td>
-    </tr>
+    @{
+        ViewBag.Title = "ListadoLocalGalponVenta";
+        Layout = "~/Views/Layout/_LayoutNavbar.cshtml";
     }
-</table>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link type="text/css" href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <link href="~/Css/Grilla.css" rel="stylesheet" />
+
+</head>
+<body>
+    <h3>Venta Local - Galpon</h3>
+    <div class="container" style="margin-left:250px">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">SUPERFICIE</th>
+                    <th scope="col">AMBIENES</th>
+                    <th scope="col">PISO</th>
+                    <th scope="col">DEPTO</th>
+                    <th scope="col">CALLE</th>
+                    <th scope="col">ALTURA</th>
+                    <th scope="col">LOCALIDAD</th>
+                    <th scope="col">DESCRIPCION</th>
+                    <th scope="col">IMPORTE</th>
+                    <th scope="col">CREDITO</th>
+                    <th scope="col">ESTADO</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody class="table-borderless">
+                    <tr>
+                        <td class="datos" style="background-color:gainsboro">@item.Id_Inmueble</td>
+                        <td class="datos">@item.Superficie</td>
+                        <td class="datos">@item.Cant_Ambientes</td>
+                        <td class="datos">@item.Piso</td>
+                        <td class="datos">@item.Depto</td>
+                        <td class="datos">@item.Calle</td>
+                        <td class="datos">@item.Altura</td>
+                        <td class="datos">@item.localidad_E.Dc_Localidad</td>
+                        <td class="datos">@item.Descripcion</td>
+                        <td class="datos">@item.Importe</td>
+                        <td class="datos">@item.Apto_Credito</td>
+                        <td class="datos">@item.estado_E.Dc_Estado</td>
+                        <td> <button class="btn btn-dark badge-pill"> @Html.ActionLink("ACTUALIZAR", "EditarVenta", new { idInmueble = item.Id_Inmueble })</button> </td>
+                        <td> <button class="btn btn-dark badge-pill"> @Html.ActionLink("ELIMINAR", "EliminarInmueble", new { idInmueble = item.Id_Inmueble }) </button></td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+    </div>
+</body>
+</html>

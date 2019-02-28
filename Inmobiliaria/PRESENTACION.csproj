@@ -98,11 +98,17 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Css\Encabezado.css" />
+    <Content Include="Css\Formulario.css" />
+    <Content Include="Css\Footer.css" />
+    <Content Include="Css\Grilla.css" />
+    <Content Include="Css\Estructura.css" />
     <Content Include="Css\Inicio.css" />
     <Content Include="Css\MenuLateral.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Js\MenuLateral.js" />
+    <Content Include="Js\Validaciones.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

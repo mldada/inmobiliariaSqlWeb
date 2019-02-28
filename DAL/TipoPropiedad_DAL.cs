@@ -18,8 +18,8 @@ namespace DAL
         SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
         SqlCommand cmd = new SqlCommand();
 
-        const string listarTiposPropiedadesVenta = "View_Listar_TiposPropiedades_Venta";
-        const string listarTiposPropiedadesAlquiler = "View_Listar_TiposPropiedades_Alquiler";
+        const string listarTiposPropiedadesVenta = "Sp_Listar_TiposPropiedades_Venta";
+        const string listarTiposPropiedadesAlquiler = "Sp_Listar_TiposPropiedades_Alquiler";
 
         public List<TipoPropiedad_E> ListadoTipoPropiedad(bool esVenta)
         {
@@ -32,7 +32,7 @@ namespace DAL
                     cn.Open();
                     cmd = new SqlCommand(listarTiposPropiedadesVenta, cn)
                     {
-                        CommandType = CommandType.TableDirect
+                        CommandType = CommandType.StoredProcedure
                     };
 
                     SqlDataReader dr = cmd.ExecuteReader();

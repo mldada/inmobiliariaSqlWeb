@@ -18,7 +18,7 @@ namespace DAL
         SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
         SqlCommand cmd = new SqlCommand();
 
-        const string listar = "View_Listar_Estados";
+        const string listar = "Sp_Listar_Estados";
 
         public List<Estado_E> ListadoEstado()
         {
@@ -29,7 +29,7 @@ namespace DAL
                 cn.Open();
                 cmd = new SqlCommand(listar, cn)
                 {
-                    CommandType = CommandType.TableDirect
+                    CommandType = CommandType.StoredProcedure
                 };
                 SqlDataReader dr = cmd.ExecuteReader();
 

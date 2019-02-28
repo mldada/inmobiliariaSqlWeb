@@ -36,7 +36,7 @@
             <tr>
                 <td>TIPO: </td>
                 <td>
-                    <select name="cboTipoPropiedad" class="form-control">
+                    <select name="cboTipoPropiedad" class="form-control" required>
                         @foreach (var item in listaTiposPropiedades)
                         {
                             <option value="@item.Id_Tipo_Propiedad">@item.Dc_Tipo_Propiedad</option>
@@ -51,28 +51,28 @@
 
             <tr>
                 <td>IMPORTE: </td>
-                <td><input type="number" min="0" class="form-control" name="importe" value="@Model.Importe" /></td>
+                <td><input type="number" min="0" class="form-control" name="importe" value="@Model.Importe" required/></td>
             </tr>
 
             <tr>
                 <td>SUPERICIE: </td>
-                <td><input type="number" min="0" class="form-control" name="superficie" value="@Model.Superficie" /></td>
+                <td><input type="number" min="0" class="form-control" name="superficie" value="@Model.Superficie" required/></td>
             </tr>
 
             <tr>
                 <td>CALLE: </td>
-                <td><input type="text" maxlength="10" class="form-control" name="calle" value="@Model.Calle" /></td>
+                <td><input type="text" maxlength="10" class="form-control" name="calle" value="@Model.Calle" required/></td>
             </tr>
 
             <tr>
                 <td>ALTURA: </td>
-                <td><input type="number" max="9999" class="form-control" name="altura" value="@Model.Altura" /></td>
+                <td><input type="number" max="9999" class="form-control" name="altura" value="@Model.Altura" required/></td>
             </tr>
 
             <tr>
                 <td>LOCALIDAD: </td>
                 <td>
-                    <select name="cboLocalidad" class="form-control">
+                    <select name="cboLocalidad" class="form-control" required>
                         @foreach (var item in listaLocalidades)
                         {
                             <option value="@item.Id_Localidad">@item.Dc_Localidad</option>
@@ -83,13 +83,13 @@
 
             <tr>
                 <td>DESCRIPCION: </td>
-                <td><input type="text" maxlength="1000" rows="5" width="200" class="form-control" name="descripcion" value="@Model.Descripcion" /></td>
+                <td><input type="text" maxlength="1000" rows="5" width="200" class="form-control" name="descripcion" value="@Model.Descripcion" required/></td>
             </tr>
 
             <tr>
                 <td>ESTADO: </td>
                 <td>
-                    <select name="cboEstado" class="form-control">
+                    <select name="cboEstado" class="form-control" required>
                         @foreach (var item in listaEstados)
                         {
                             <option value="@item.Id_Estado">@item.Dc_Estado</option>
@@ -100,21 +100,21 @@
 
             <tr>
                 <td>AMBIENTES: </td>
-                <td><input type="number" min="0" max="10" class="form-control" name="cantAmbientes" value="@Model.Cant_Ambientes" /></td>
+                <td><input type="number" min="0" max="10" class="form-control" name="cantAmbientes" value="@Model.Cant_Ambientes" required/></td>
             </tr>
 
             <tr>
                 <td>PISO: </td>
-                <td><input type="text" maxlength="2" class="form-control" name="piso" value="@Model.Piso" /></td>
+                <td><input type="text" maxlength="2" class="form-control" name="piso" value="@Model.Piso" required /></td>
             </tr>
 
             <tr>
                 <td>DEPTO: </td>
-                <td><input type="text" maxlength="1" class="form-control" name="depto" value="@Model.Depto" /></td>
+                <td><input type="text" maxlength="1" class="form-control" name="depto" value="@Model.Depto" required/></td>
             </tr>
 
             <tr>
-                <td><button type="submit" id="btnActualizar" class="btn btn-primary" />Actualizar</td>
+                <td><button type="submit" id="btnActualizar" class="btn btn-primary" onsubmit="return validar();" />Actualizar</td>
             </tr>
 
         }

@@ -107,6 +107,7 @@
     <Content Include="Css\MenuLateral.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Js\geo.js" />
     <Content Include="Js\MenuLateral.js" />
     <Content Include="Js\Validaciones.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
